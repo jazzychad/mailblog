@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title type="text" xml:lang="en">jazzychad's blog</title>
+  <link type="application/atom+xml" href="http://blog.jazzychad.net/feed/index.xml" rel="self"/>
+  <link type="text" href="http://blog.jazzychad.net" rel="alternate"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>http://blog.jazzychad.net/</id>
+  <author>
+    <name>Chad Etzel</name>
+    </author>
+  <rights>Copyright (c) 1984-2011, Chad Etzel; all rights reserved.</rights>
+  
+  {% for post in site.posts limit:20 %}
+  <entry>
+    <title>{{ post.title }}</title>
+    <link rel="alternate" href="http://blog.jazzychad.net{{ post.url }}">http://blog.jazzychad.net{{ post.url }}</link>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <id>http://blog.jazzychad.net{{ post.url }}</id>
+    <guid>http://blog.jazzychad.net{{ post.url }}</guid>
+    <content type="html">{{ post.content | remove: "<!--more-->" | xml_escape }}</content>
+    </entry>
+  {% endfor %}
+</feed>

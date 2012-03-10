@@ -1,0 +1,15 @@
+---
+layout: home
+title: jazzychad's mailblog
+---
+<h1>Recent Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+	<a style="font-size: 24px;" href="{{ post.url }}">{{ post.title }}</a> &ndash; <span class="indexdate">{{ post.date | date_to_string }}</span>
+	{% include post_preview.html %}
+      </li>
+      
+    {% endfor %}
+  </ul>
+<br clear="all"/>

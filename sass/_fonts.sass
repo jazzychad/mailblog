@@ -1,0 +1,22 @@
+// font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+// font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+// font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@mixin font-smoothing-aa
+  -webkit-font-smoothing: antialiased
+  //use subpixel-antialiased for light text on darker bg
+  
+@mixin font-smoothing-sp
+  -webkit-font-smoothing: subpixel-antialiased
+  
+@mixin yanone-family // 200, 300, 400, 700
+  //font-family: "Yanone Kaffeesatz", Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif
+  //font-family: "museo-sans-1","museo-sans-2",sans-serif
+  font-family: "kaffeesatz-1","kaffeesatz-2", Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif
+  
+@mixin droid-family
+  //font-family: "Droid Sans", Verdana, sans-serif
+  font-family: "droid-sans-1","droid-sans-2", Verdana, sans-serif
+  
+@mixin museo-family
+  font-family: "museo-sans-1","museo-sans-2", Verdana, Arial, sans-serif

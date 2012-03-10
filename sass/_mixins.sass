@@ -1,0 +1,239 @@
+@mixin backgroundclip-fix
+  -webkit-background-clip: padding-box
+  -moz-background-clip: padding-box
+  background-clip: padding-box
+
+@mixin outline-fix
+  outline: none
+  -moz-outline: none
+  outline-color: -moz-use-text-color
+  outline-style: none
+  outline-width: 0
+
+@mixin clearfix
+  overflow: auto
+  overflow: -moz-scrollbars-none
+  // This makes ie6 get layout
+  display: inline-block
+  // and this puts it back to block
+  &
+    display: block
+
+@mixin border-radius($amount)
+  -moz-border-radius: $amount
+  -webkit-border-radius: $amount
+  border-radius: $amount
+  @include backgroundclip-fix //testing
+  
+@mixin border-radius-top-LR($rad)
+  -moz-border-radius-topleft: $rad
+  -moz-border-radius-topright: $rad
+  -webkit-border-top-left-radius: $rad
+  -webkit-border-top-right-radius: $rad
+  border-top-left-radius: $rad
+  border-top-right-radius: $rad
+  
+@mixin border-radius-bottom-LR($rad)
+  -moz-border-radius-bottomleft: $rad
+  -moz-border-radius-bottomright: $rad
+  -webkit-border-bottom-left-radius: $rad
+  -webkit-border-bottom-right-radius: $rad
+  border-bottom-right-radius: $rad
+  border-bottom-left-radius: $rad
+  
+@mixin border-radius-top-right($rad)
+  -moz-border-radius-topright: $rad
+  -webkit-border-top-right-radius: $rad
+  border-top-right-radius: $rad
+
+@mixin border-radius-top-left($rad)
+  -moz-border-radius-topleft: $rad
+  -webkit-border-top-left-radius: $rad
+  border-top-left-radius: $rad
+
+@mixin border-radius-bottom-right($rad)
+  -moz-border-radius-bottomright: $rad
+  -webkit-border-bottom-right-radius: $rad
+  border-bottom-right-radius: $rad
+
+@mixin border-radius-bottom-left($rad)
+  -moz-border-radius-bottomleft: $rad
+  -webkit-border-bottom-left-radius: $rad
+  border-bottom-left-radius: $rad
+  
+@mixin border-radius-left($rad)
+  border-bottom-left-radius: $rad
+  -webkit-border-bottom-left-radius: $rad
+  -moz-border-radius-bottomleft: $rad
+  -moz-border-radius-topleft: $rad
+  -webkit-border-top-left-radius: $rad
+  border-top-left-radius: $rad
+  @include backgroundclip-fix //testing
+
+@mixin border-radius-right($rad)
+  border-bottom-right-radius: $rad
+  -webkit-border-bottom-right-radius: $rad
+  -moz-border-radius-bottomright: $rad
+  -moz-border-radius-topright: $rad
+  -webkit-border-top-right-radius: $rad
+  border-top-right-radius: $rad
+  @include backgroundclip-fix //testing
+
+@mixin box-shadow($ho, $vo, $b, $c)
+  -webkit-box-shadow: $ho $vo $b $c
+  -moz-box-shadow: $ho $vo $b $c
+  -khtml-box-shadow: $ho $vo $b $c
+  -o-box-shadow: $ho $vo $b $c
+  box-shadow: $ho $vo $b $c
+  //filter: "progid:DXImageTransform.Microsoft.dropshadow( OffX=" $ho, "OffY=" $vo, "Color=" $c ")"
+  //-ms-filter: "progid:DXImageTransform.Microsoft.dropshadow( OffX=" $ho, "OffY=" $vo, "Color=" $c ")"
+
+@mixin resizable
+  resize: both
+
+@mixin border-gradient-lighten($color)
+  border-width: 8px 
+  border-style: solid
+  border-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  border-bottom-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  border-top-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  border-left-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  border-right-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  -moz-border-bottom-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%)
+  -moz-border-top-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%)
+  -moz-border-left-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%)
+  -moz-border-right-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%)
+  -webkit-border-bottom-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  -webkit-border-top-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  -webkit-border-left-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  -webkit-border-right-colors: $color lighten($color, 5%) lighten($color, 10%) lighten($color, 15%) lighten($color, 20%) lighten($color, 25%) lighten($color, 30%) lighten($color, 35%) !important
+  //-o-border-*-colors...
+  //-khtml-border-*-colors..
+
+@mixin border-gradient-darken($color)
+  border-width: 8px !important
+  border-style: solid !important
+  -moz-border-bottom-colors: $color darken($color, 5%) darken($color, 10%) darken($color, 15%) darken($color, 20%) darken($color, 25%) darken($color, 30%) darken($color, 35%)
+  -moz-border-top-colors: $color darken($color, 5%) darken($color, 10%) darken($color, 15%) darken($color, 20%) darken($color, 25%) darken($color, 30%) darken($color, 35%)
+  -moz-border-left-colors: $color darken($color, 5%) darken($color, 10%) darken($color, 15%) darken($color, 20%) darken($color, 25%) darken($color, 30%) darken($color, 35%)
+  -moz-border-right-colors: $color darken($color, 5%) darken($color, 10%) darken($color, 15%) darken($color, 20%) darken($color, 25%) darken($color, 30%) darken($color, 35%)
+  -webkit-border-bottom-colors: $color darken($color, 5%) darken($color, 10%) darken($color, 15%) darken($color, 20%) darken($color, 25%) darken($color, 30%) darken($color, 35%)
+  -webkit-border-top-colors: $color darken($color, 5%) darken($color, 10%) darken($color, 15%) darken($color, 20%) darken($color, 25%) darken($color, 30%) darken($color, 35%)
+  -webkit-border-left-colors: $color darken($color, 5%) darken($color, 10%) darken($color, 15%) darken($color, 20%) darken($color, 25%) darken($color, 30%) darken($color, 35%)
+  -webkit-border-right-colors: $color darken($color, 5%) darken($color, 10%) darken($color, 15%) darken($color, 20%) darken($color, 25%) darken($color, 30%) darken($color, 35%)
+  //-o-border-*-colors...
+  //-khtml-border-*-colors..
+
+
+@mixin box-inner-shadow($ho, $vo, $b, $c)
+  -moz-box-shadow: inset $ho $vo $b $c !important
+  -webkit-box-shadow: inset $ho $vo $b $c !important
+  box-shadow: inset $ho $vo $b $c !important
+  //filter: "progid:DXImageTransform.Microsoft.dropshadow( OffX=" $ho, "OffY=" $vo, "Color=" $c ")"
+  //-ms-filter: "progid:DXImageTransform.Microsoft.dropshadow( OffX=" $ho, "OffY=" $vo, "Color=" $c ")"
+
+  
+
+@mixin gradient-adv($from, $mid, $to)
+  background: $mid
+  background-image: -moz-linear-gradient(10% 86% 80deg, $from, $mid, $to 80%)
+  background-image: -webkit-gradient(linear, 10% 86%, 90% 50%, from($from), to($to), color-stop(.6,$mid))
+  
+@mixin background-size($w,$h)
+  -webkit-background-size: $w $h
+  -khtml-background-size: $w $h
+  -o-background-size: $w $h
+  background-size: $w $h
+
+@mixin gradient($from, $to, $fallback)
+  //background: $fallback
+  background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to))
+  background-image: -moz-linear-gradient(top, $from, $to)
+  background-image: -o-gradient(top, $from, $to)
+  background-color: $fallback !important
+  *background-color: $fallback !important
+  //behavior: url('/web/js/PIE.php')
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='$from', EndColorStr='$to') /* IE6,IE7 */
+  //-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$from', EndColorStr='$to')" /* IE8 */
+  //filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffffff, endColorstr=#5F7BA4);
+  //-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#5F7BA4)";
+  
+@mixin box-rotate($deg, $transition_speed)
+  -moz-transform: rotate($deg+deg)
+  -o-transform: rotate($deg+deg)
+  -webkit-transform: rotate($deg+deg)
+  transform: rotate($deg+deg)
+  filter: "progid:DXImageTransform.Microsoft.BasicImage( rotation=" $deg ")"
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage( rotation=" $deg ")"
+  zoom: 1
+  //-moz-transition: all $transition_speed+s ease-out
+  //-o-transition: all $transition_speed+s ease-out
+  //-webkit-transition: all $transition_speed+s ease-out
+
+@mixin nice-button
+  //padding: 6px 7px 5px 7px
+  padding: 7px 12px 6px
+  cursor: pointer
+  font-weight: normal
+  text-decoration: none
+  line-height: 1
+  letter-spacing: 0.5px !important
+  @include outline-fix
+  @include gradient(lighten(#006795, 20%), lighten(#006795, 10%), lighten(#006795, 7%))
+  color: #fff
+  border: 1px solid lighten(#006795, 10%)
+  @include border-radius(3px)
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.4)
+  @include box-shadow(0,1px,2px,rgba(0,0,0,0.3))
+  font-size: 1em
+  &:hover
+    border-color: #14568a
+    @include box-shadow(0,1px,3px,rgba(0,0,0,0.6))
+
+@mixin slick-button
+  @include border-radius(3px)
+  @include box-shadow(0,1px,2px,rgba(0,0,0,0.3))
+  @include gradient(#f7ae26, #DF8608, #DF8608)
+  border: 1px solid #DF8608
+  color: #fff
+  cursor: pointer
+  outline: medium none
+  padding: 4px 12px 6px
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.4)
+  &:hover
+    @include box-shadow(0,1px,3px,rgba(0,0,0,0.6))
+    border-color: #824B0A
+    
+@mixin slick-button-slim
+  @include slick-button
+  padding: 2px 5px 2px
+  text-shadow: none
+  letter-spacing: 0.5px
+  
+@mixin inline-block
+  display: -moz-inline-box
+  -moz-box-orient: vertical
+  display: inline-block
+  vertical-align: middle
+  // #display: inline           IE6-7 HAX
+  // #vertical-align: auto 
+
+@mixin titles-style
+  @include gradient(#95abb8, #7e9aab, #7e9aab)
+  text-shadow: -1px -1px 0 lighten(#466b80, 10%)
+  font-size: 1.4em
+  letter-spacing: 1px
+  color: #ddeaf1
+  @include yanone-family
+  padding: 5px 20px
+
+@mixin hide
+  position: absolute
+  top: -9999em
+
+@mixin opacity($opacity)
+  opacity: $opacity
+  -moz-opacity: $opacity
+  -khtml-opacity: $opacity
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + round($opacity*100) + ")"
+  filter: "alpha(opacity=" + round($opacity*100) + ")"

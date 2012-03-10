@@ -1,0 +1,28 @@
+---
+layout: default
+title: Archive
+---
+<div id="post">
+  <h1>Archive</h1>
+
+
+  {% for year in (2010..2012) reversed -%}
+  {% if site.collated_posts[year] -%}
+  <h1 class="archives">{{ year }}</h1>
+  {% endif %}
+  {% for month in (1..12) reversed -%}
+  {% if site.collated_posts[year][month] -%}
+  <h2>{{ month | to_month }}</h2>
+  <ul class="archive-page">
+    {% for day in (1..31) reversed -%}
+    {% if site.collated_posts[year][month][day] -%}
+    {% for post in site.collated_posts[year][month][day] reversed -%}
+    <li><span class="archivedate">{{ month | to_month }} {{ day }}</span> &ndash; <a href='{{ site.base_url }}{{ post.url }}' title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor -%}
+    {% endif -%}
+    {% endfor -%}
+    </ul>
+  {% endif -%}
+  {% endfor -%}
+  {% endfor -%}
+</div>

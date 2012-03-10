@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>{{ page.title }} : mailblog</title>
+    <link rel="stylesheet" href="/stylesheets/site.css" type="text/css" />
+    {% if page.has_code %}
+    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+    {% endif %}
+    <link  href="http://fonts.googleapis.com/css?family=VT323:regular" rel="stylesheet" type="text/css" >
+    <link rel="canonical" href="http://mailblog.jazzychad.net{{ page.url }}"/>
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+	<a href="/"><h1 class="title">jazzychad's mailblog</h1></a>
+	<br clear="all"/>
+	<p id="navlinks">
+	  <a href="/">Home</a> &bull; <a href="/archive.html">Archive</a> &bull; <a href="/about.html">About</a>
+	</p>
+      </div>
+      <p/>
+      {{ content }}
+      <div id="footer">
+	<small class="copyright">&copy; 1984 - 2012 - Chad Etzel</small>
+      </div>
+    </div>
+    {% if page.has_images %}
+    <script src="/js/zoom/FancyZoom.js"></script> 
+    <script src="/js/zoom/FancyZoomHTML.js"></script> 
+    <script>setupZoom();</script> 
+    {% endif %}
+  </body>
+</html>

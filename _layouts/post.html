@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div id="post">
+<h1 class="title">{{ page.title }}</h1>
+<em class="postdate">&ndash; {{ page.date | date_to_long_string }}</em>
+<br/>
+<!--<em class="wordcount">&ndash; {% wordcount %}{{ content }}{% endwordcount %} words</em>-->
+<p clear="all"/>
+<div id="contents">
+{{ content }}
+<p/>
+<span class="eol"># END OF LINE</span>
+{% if page.hnid %}
+<p><a href="http://news.ycombinator.com/item?id={{ page.hnid }}">Further discussion on Hacker News.</a></p>
+{% endif %}
+</div>
+</div>
+<div id="tags">
+<!--
+  <strong>Tagged: </strong>
+  {% for tag in page.tags %}
+  <a class="tag" href="/tags.html#{{tag}}">{{ tag }}</a> 
+  {% endfor %}
+-->
+<p/>
+{% if page.share_buttons %}
+<div style="display:inline;">{% include share_buttons.html %}</div>
+{% endif %}
+</div>
