@@ -1,5 +1,5 @@
 # replace /home/chad with your home directory
-# replace s3://mailblog.jazzychad.net/ with your s3 bucket
+# replace s3://mailblog.example.com/ with your s3 bucket
 
 namespace :site do
   task :clean do
@@ -21,7 +21,7 @@ namespace :site do
   task :deploy => [:clean, :sass, :compile] do
   
    puts 'Deploying site...'
-   sh 's3cmd --config=/home/chad/.s3cfg_mailblog sync _site/ s3://mailblog.jazzychad.net/'
+   sh 's3cmd --config=/home/chad/.s3cfg_mailblog sync _site/ s3://mailblog.example.com/'
    sh 'rake site:clean'
    puts 'Done.'
 

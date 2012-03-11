@@ -1,10 +1,10 @@
 ## jazzychad's base mailblog template
 
-You will want to replace all references to 'jazzychad' and
-'mailblog.jazzychad.net' throughout this repo to match your own
-name/url. You can grep for all mentions with this command:
+You will want to replace all references to 'example.com' throughout
+this repo to match your own name/url. You can grep for all mentions
+with this command:
 
-`grep -rHn "jazzychad" .`
+`grep -rHn "example\.com" .`
 
 Then play with the layouts and sass files to your heart's content!
 

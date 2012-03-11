@@ -2,4 +2,4 @@ markdown: rdiscount
 pygments: true
 exclude: [Rakefile, README.md, config.rb]
 
-base_url: http://mailblog.jazzychad.net
+base_url: http://mailblog.example.com
